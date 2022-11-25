@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <assert.h>
+
+void Mystrcpy1(char *des,const char *src)
+{
+    assert(des != NULL && src != NULL);
+    if(des==NULL && src == NULL)
+    {
+        return;
+    }
+    int i;
+    for(i=0;*src!='\0';i++)
+    {
+        des[i]=src[i];
+    }
+    des[i]='\0';
+}
+
+void Mystrcpy2(char *des, const char *src)
+{
+    assert(des != NULL && src != NULL);
+    if(des==NULL && src == NULL)
+    {
+        return;
+    }
+
+    while(*src!='\0')
+    {
+        *des=*src;
+        des++;
+        src++;
+    }
+    *des='\0';
+}
+
+void Mystrcpy3(char *des,const char *src)
+{
+    assert(des != NULL && src != NULL);
+    if(des==NULL && src == NULL)
+    {
+        return;
+    }
+    while(*src!='\0')
+    {
+        *des++ = *src++;
+    }
+    *des='\0';
+}
+
+void Mystrcpy4(char *des,const char *src)
+{
+
+    while(*des++ = *src++);//相当于while(*(des++)=*(src++));
+}
+
+char *Mystrcpy(char *des, char *src)
+{
+    char *p=des;
+    while(*des++ = *src++);
+    return p;
+}
+int main()
+{
+    char *str1 = "hello";
+    char str2[10];
+    Mystrcpy(str2,str1);
+    printf("%s\n",str2);
+    return 0;
+}
+
+
+
+
+
+}
